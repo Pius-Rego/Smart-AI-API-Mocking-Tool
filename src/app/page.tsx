@@ -5,6 +5,7 @@ import { JsonEditor } from "@/components/JsonEditor";
 import { EndpointList } from "@/components/EndpointList";
 import { ChaosMode } from "@/components/ChaosMode";
 import { ApiTester } from "@/components/ApiTester";
+import { ApiKeyInput } from "@/components/ApiKeyInput";
 import { useAppStore } from "@/lib/store";
 import { Zap, Code2, TestTube, Sparkles } from "lucide-react";
 
@@ -48,6 +49,11 @@ export default function Home() {
             Describe what you need, get a live API endpoint instantly. Test with chaos mode,
             simulate errors, and build faster.
           </p>
+        </div>
+
+        {/* API Key Input */}
+        <div className="max-w-2xl mx-auto mb-6">
+          <ApiKeyInput />
         </div>
 
         <PromptInput />

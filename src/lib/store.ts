@@ -10,6 +10,9 @@ interface AppState {
   isGenerating: boolean;
   error: string | null;
   
+  // API Key
+  apiKey: string | null;
+  
   // Actions
   setEndpoints: (endpoints: MockEndpoint[]) => void;
   addEndpoint: (endpoint: MockEndpoint) => void;
@@ -18,6 +21,7 @@ interface AppState {
   setCurrentEndpoint: (endpoint: MockEndpoint | null) => void;
   setIsGenerating: (isGenerating: boolean) => void;
   setError: (error: string | null) => void;
+  setApiKey: (apiKey: string | null) => void;
   
   // Chaos Mode
   updateEndpointSettings: (id: string, settings: Partial<EndpointSettings>) => void;
@@ -28,8 +32,11 @@ export const useAppStore = create<AppState>((set, get) => ({
   currentEndpoint: null,
   isGenerating: false,
   error: null,
+  apiKey: null,
 
   setEndpoints: (endpoints) => set({ endpoints }),
+  
+  setApiKey: (apiKey) => set({ apiKey }),
   
   addEndpoint: (endpoint) =>
     set((state) => ({
