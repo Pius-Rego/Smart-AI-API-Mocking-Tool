@@ -34,13 +34,13 @@ export function JsonEditor() {
 
   if (!currentEndpoint) {
     return (
-      <div className="bg-white rounded-2xl shadow-xl border-2 border-gray-100 p-12">
+      <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border-2 border-gray-100 dark:border-slate-700 p-12">
         <div className="text-center">
-          <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center">
+          <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-slate-700 dark:to-slate-600 rounded-2xl flex items-center justify-center">
             <Code2 className="w-10 h-10 text-gray-400" />
           </div>
-          <h3 className="text-xl font-bold text-gray-900 mb-3">No Endpoint Selected</h3>
-          <p className="text-gray-500 max-w-sm mx-auto">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">No Endpoint Selected</h3>
+          <p className="text-gray-500 dark:text-gray-400 max-w-sm mx-auto">
             Generate a mock API above or select one from your endpoints list to view and edit the response data.
           </p>
         </div>
@@ -90,17 +90,17 @@ export function JsonEditor() {
     : `/api/mock/${currentEndpoint.slug}`;
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl border-2 border-gray-100 overflow-hidden">
+    <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border-2 border-gray-100 dark:border-slate-700 overflow-hidden">
       {/* Header */}
-      <div className="px-6 py-5 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white">
+      <div className="px-6 py-5 border-b border-gray-100 dark:border-slate-700 bg-gradient-to-r from-gray-50 to-white dark:from-slate-900 dark:to-slate-800">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <div className="p-3 bg-indigo-100 rounded-xl">
-              <FileJson className="w-5 h-5 text-indigo-600" />
+            <div className="p-3 bg-indigo-100 dark:bg-indigo-900/50 rounded-xl">
+              <FileJson className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
             </div>
             <div>
-              <h3 className="font-bold text-gray-900 text-lg">{currentEndpoint.name}</h3>
-              <p className="text-sm text-gray-500 mt-0.5 line-clamp-1">
+              <h3 className="font-bold text-gray-900 dark:text-white text-lg">{currentEndpoint.name}</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5 line-clamp-1">
                 {currentEndpoint.prompt}
               </p>
             </div>
@@ -110,7 +110,7 @@ export function JsonEditor() {
               <>
                 <button
                   onClick={handleCancel}
-                  className="p-2.5 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-xl transition-all"
+                  className="p-2.5 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-xl transition-all"
                   title="Cancel"
                 >
                   <X className="w-5 h-5" />
@@ -127,7 +127,7 @@ export function JsonEditor() {
               <>
                 <button
                   onClick={() => handleCopy(jsonText, "json")}
-                  className="p-2.5 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-xl transition-all"
+                  className="p-2.5 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-xl transition-all"
                   title="Copy JSON"
                 >
                   {copied === "json" ? (
@@ -138,7 +138,7 @@ export function JsonEditor() {
                 </button>
                 <button
                   onClick={() => setEditMode(true)}
-                  className="p-2.5 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-xl transition-all"
+                  className="p-2.5 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-xl transition-all"
                   title="Edit JSON"
                 >
                   <Edit3 className="w-5 h-5" />
@@ -150,23 +150,23 @@ export function JsonEditor() {
       </div>
 
       {/* Endpoint URL */}
-      <div className="px-6 py-4 bg-gradient-to-r from-indigo-50 to-purple-50 border-b border-indigo-100">
+      <div className="px-6 py-4 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 border-b border-indigo-100 dark:border-indigo-800">
         <div className="flex items-center justify-between">
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-2">
-              <Link2 className="w-4 h-4 text-indigo-600" />
-              <p className="text-xs text-indigo-600 font-semibold uppercase tracking-wide">
+              <Link2 className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+              <p className="text-xs text-indigo-600 dark:text-indigo-400 font-semibold uppercase tracking-wide">
                 Live Endpoint URL
               </p>
             </div>
-            <code className="text-sm text-indigo-900 font-mono bg-white/60 px-3 py-1.5 rounded-lg truncate block border border-indigo-200">
+            <code className="text-sm text-indigo-900 dark:text-indigo-200 font-mono bg-white/60 dark:bg-slate-800/60 px-3 py-1.5 rounded-lg truncate block border border-indigo-200 dark:border-indigo-800">
               {endpointUrl}
             </code>
           </div>
           <div className="flex items-center gap-2 ml-4">
             <button
               onClick={() => handleCopy(endpointUrl, "url")}
-              className="p-2.5 text-indigo-600 hover:bg-indigo-100 rounded-xl transition-all"
+              className="p-2.5 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 rounded-xl transition-all"
               title="Copy URL"
             >
               {copied === "url" ? (
@@ -179,7 +179,7 @@ export function JsonEditor() {
               href={endpointUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 text-indigo-600 hover:bg-indigo-100 rounded-xl transition-all"
+              className="p-2.5 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 rounded-xl transition-all"
               title="Open in new tab"
             >
               <ExternalLink className="w-4 h-4" />
@@ -191,8 +191,8 @@ export function JsonEditor() {
       {/* JSON Editor */}
       <div className="relative">
         {error && (
-          <div className="absolute top-0 left-0 right-0 p-4 bg-red-50 border-b border-red-200 text-red-600 text-sm flex items-center gap-2 z-10">
-            <span className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center text-xs font-bold">!</span>
+          <div className="absolute top-0 left-0 right-0 p-4 bg-red-50 dark:bg-red-900/30 border-b border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 text-sm flex items-center gap-2 z-10">
+            <span className="w-5 h-5 rounded-full bg-red-100 dark:bg-red-900/50 flex items-center justify-center text-xs font-bold">!</span>
             {error}
           </div>
         )}
@@ -203,7 +203,7 @@ export function JsonEditor() {
           className={cn(
             "w-full h-[400px] p-6 font-mono text-sm resize-none focus:outline-none leading-relaxed",
             editMode
-              ? "bg-amber-50 text-gray-900 border-l-4 border-amber-400"
+              ? "bg-amber-50 dark:bg-amber-900/20 text-gray-900 dark:text-amber-100 border-l-4 border-amber-400"
               : "bg-gray-900 text-green-400",
             error && "pt-16"
           )}
@@ -212,21 +212,21 @@ export function JsonEditor() {
         
         {/* Edit Mode Indicator */}
         {editMode && (
-          <div className="absolute bottom-4 right-4 px-3 py-1.5 bg-amber-100 text-amber-700 text-xs font-medium rounded-full">
+          <div className="absolute bottom-4 right-4 px-3 py-1.5 bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300 text-xs font-medium rounded-full">
             Editing Mode
           </div>
         )}
       </div>
 
       {/* Footer with Schema Info */}
-      <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
-        <div className="flex items-center justify-between text-sm text-gray-500">
+      <div className="px-6 py-4 bg-gray-50 dark:bg-slate-900 border-t border-gray-100 dark:border-slate-700">
+        <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-500" />
               {Array.isArray(currentEndpoint.data) ? "Array" : "Object"}
             </span>
-            <span className="text-gray-300">•</span>
+            <span className="text-gray-300 dark:text-gray-600">•</span>
             <span>
               {Array.isArray(currentEndpoint.data)
                 ? `${currentEndpoint.data.length} items`

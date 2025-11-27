@@ -72,18 +72,18 @@ const additionalFeatures = [
 
 export function Features() {
   return (
-    <section id="features" className="py-24 bg-white">
+    <section id="features" className="py-24 bg-white dark:bg-slate-900">
       <div className="container-main">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 rounded-full text-sm font-medium mb-4">
             Features
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Everything You Need to{" "}
             <span className="gradient-text">Mock Like a Pro</span>
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 dark:text-gray-300">
             Powerful features designed for modern frontend development. 
             Build faster, test better, ship with confidence.
           </p>
@@ -94,7 +94,7 @@ export function Features() {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="group p-8 rounded-2xl bg-white border border-gray-200 hover:border-indigo-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group p-8 rounded-2xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 hover:border-indigo-200 dark:hover:border-indigo-800 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Icon */}
@@ -108,10 +108,10 @@ export function Features() {
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 {feature.description}
               </p>
             </div>
@@ -119,9 +119,9 @@ export function Features() {
         </div>
 
         {/* Additional Features Bar */}
-        <div className="bg-gradient-to-r from-indigo-50 via-purple-50 to-indigo-50 rounded-2xl p-8">
+        <div className="bg-gradient-to-r from-indigo-50 via-purple-50 to-indigo-50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-800 rounded-2xl p-8">
           <div className="text-center mb-8">
-            <h3 className="text-xl font-bold text-gray-900">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white">
               Plus many more features...
             </h3>
           </div>
@@ -129,10 +129,10 @@ export function Features() {
             {additionalFeatures.map((feature) => (
               <div
                 key={feature.text}
-                className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200"
+                className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-900 rounded-full shadow-sm border border-gray-200 dark:border-slate-700"
               >
-                <feature.icon className="w-4 h-4 text-indigo-600" />
-                <span className="text-sm font-medium text-gray-700">
+                <feature.icon className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   {feature.text}
                 </span>
               </div>

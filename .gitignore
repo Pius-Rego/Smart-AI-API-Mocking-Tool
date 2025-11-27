@@ -32,3 +32,6 @@ Thumbs.db
 
 # Testing
 coverage
+
+# Mock data storage (persisted locally)
+mock-data.json

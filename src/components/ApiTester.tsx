@@ -117,15 +117,15 @@ export function ApiTester() {
   const isMethodSupported = currentEndpoint.settings.supportedMethods.includes(selectedMethod);
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl border-2 border-gray-100 overflow-hidden">
-      <div className="px-6 py-5 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white">
+    <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border-2 border-gray-100 dark:border-slate-700 overflow-hidden">
+      <div className="px-6 py-5 border-b border-gray-100 dark:border-slate-700 bg-gradient-to-r from-gray-50 to-white dark:from-slate-900 dark:to-slate-800">
         <div className="flex items-center gap-4">
-          <div className="p-3 bg-purple-100 rounded-xl">
-            <Terminal className="w-5 h-5 text-purple-600" />
+          <div className="p-3 bg-purple-100 dark:bg-purple-900/50 rounded-xl">
+            <Terminal className="w-5 h-5 text-purple-600 dark:text-purple-400" />
           </div>
           <div>
-            <h3 className="font-bold text-gray-900 text-lg">API Tester</h3>
-            <p className="text-sm text-gray-500">Test your endpoint with different HTTP methods</p>
+            <h3 className="font-bold text-gray-900 dark:text-white text-lg">API Tester</h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400">Test your endpoint with different HTTP methods</p>
           </div>
         </div>
       </div>

@@ -146,7 +146,7 @@ Generate the mock data now:`,
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { prompt } = body;
+    const { prompt, apiKey: userApiKey } = body;
 
     if (!prompt || typeof prompt !== "string") {
       return NextResponse.json(
@@ -155,15 +155,25 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Generate mock data - use Gemini if API key is configured, otherwise use local generator
+    // Use user's API key if provided, otherwise use server's API key
+    const apiKeyToUse = userApiKey || GEMINI_API_KEY;
+
+    // Generate mock data - use Gemini if API key is available, otherwise use local generator
     let data: unknown;
     
-    if (GEMINI_API_KEY) {
+    if (apiKeyToUse) {
       try {
-        data = await generateWithGemini(prompt, GEMINI_API_KEY);
+        data = await generateWithGemini(prompt, apiKeyToUse);
       } catch (error) {
         console.error("Gemini API error:", error);
-        // Fallback to local generator if Gemini fails
+        // If user provided their own key and it failed, return the error
+        if (userApiKey) {
+          return NextResponse.json(
+            { success: false, error: "Invalid API key or Gemini API error. Please check your API key." },
+            { status: 400 }
+          );
+        }
+        // Fallback to local generator if server's Gemini fails
         data = generateContextAwareData(prompt);
       }
     } else {

@@ -99,19 +99,19 @@ export function ChaosMode() {
   const chaosEnabled = settings.latency > 0 || settings.errorRate > 0;
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl border-2 border-gray-100 overflow-hidden">
+    <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border-2 border-gray-100 dark:border-slate-700 overflow-hidden">
       {/* Header */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full px-6 py-5 flex items-center justify-between bg-gradient-to-r from-gray-50 to-white hover:from-gray-100 hover:to-gray-50 transition-all"
+        className="w-full px-6 py-5 flex items-center justify-between bg-gradient-to-r from-gray-50 to-white dark:from-slate-900 dark:to-slate-800 hover:from-gray-100 hover:to-gray-50 dark:hover:from-slate-800 dark:hover:to-slate-700 transition-all"
       >
         <div className="flex items-center gap-4">
           <div
             className={cn(
               "p-3 rounded-xl transition-all",
               chaosEnabled 
-                ? "bg-gradient-to-br from-orange-400 to-red-500 shadow-lg shadow-orange-200" 
-                : "bg-gray-100"
+                ? "bg-gradient-to-br from-orange-400 to-red-500 shadow-lg shadow-orange-200 dark:shadow-orange-900/30" 
+                : "bg-gray-100 dark:bg-slate-700"
             )}
           >
             <Flame
@@ -122,8 +122,8 @@ export function ChaosMode() {
             />
           </div>
           <div className="text-left">
-            <h3 className="font-bold text-gray-900 text-lg">Chaos Mode & Routing</h3>
-            <p className="text-sm text-gray-500 mt-0.5">
+            <h3 className="font-bold text-gray-900 dark:text-white text-lg">Chaos Mode & Routing</h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
               {chaosEnabled
                 ? `🔥 Active: ${settings.latency}ms delay, ${settings.errorRate}% error rate`
                 : "Simulate real-world network conditions"}
@@ -132,7 +132,7 @@ export function ChaosMode() {
         </div>
         <div className={cn(
           "p-2 rounded-xl transition-all",
-          isExpanded ? "bg-indigo-100 text-indigo-600" : "bg-gray-100 text-gray-400"
+          isExpanded ? "bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400" : "bg-gray-100 dark:bg-slate-700 text-gray-400"
         )}>
           {isExpanded ? (
             <ChevronUp className="w-5 h-5" />

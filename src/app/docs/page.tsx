@@ -80,7 +80,7 @@ export default function DocsPage() {
             <div className="flex items-center gap-4">
               <Link
                 href="/"
-                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+                className="flex items-center gap-2 text-gray-600 hover:!text-black transition-colors"
               >
                 <ArrowLeft className="w-5 h-5" />
                 <span className="font-medium">Back</span>
@@ -88,7 +88,7 @@ export default function DocsPage() {
               <div className="h-6 w-px bg-gray-300" />
               <div className="flex items-center gap-2">
                 <Book className="w-5 h-5 text-indigo-600" />
-                <span className="font-bold text-gray-900">Documentation</span>
+                <span className="font-bold !text-black">Documentation</span>
               </div>
             </div>
 
@@ -122,7 +122,7 @@ export default function DocsPage() {
                       "w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all",
                       isActive
                         ? "bg-indigo-50 text-indigo-700 font-semibold"
-                        : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+                        : "text-gray-600 hover:bg-gray-100 hover:!text-black"
                     )}
                   >
                     <Icon className="w-5 h-5" />
@@ -139,12 +139,12 @@ export default function DocsPage() {
             <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
               {/* Getting Started */}
               {activeSection === "getting-started" && (
-                <div className="prose prose-indigo max-w-none">
+                <div className="prose prose-slate max-w-none">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="p-3 bg-indigo-100 rounded-xl">
                       <Rocket className="w-6 h-6 text-indigo-600" />
                     </div>
-                    <h1 className="text-3xl font-bold text-gray-900 m-0">Getting Started</h1>
+                    <h1 className="text-3xl font-bold !text-black m-0">Getting Started</h1>
                   </div>
 
                   <p className="text-lg text-gray-600 leading-relaxed">
@@ -152,7 +152,7 @@ export default function DocsPage() {
                     This guide will walk you through the basics of creating your first mock API.
                   </p>
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Quick Start</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">Quick Start</h2>
                   
                   <div className="space-y-4">
                     <div className="flex gap-4 p-4 bg-gray-50 rounded-xl">
@@ -160,7 +160,7 @@ export default function DocsPage() {
                         1
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 m-0">Describe your API</h3>
+                        <h3 className="font-semibold !text-black m-0">Describe your API</h3>
                         <p className="text-gray-600 mt-1 mb-0">
                           Enter a natural language description of the API data you need.
                         </p>
@@ -172,7 +172,7 @@ export default function DocsPage() {
                         2
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 m-0">Generate mock data</h3>
+                        <h3 className="font-semibold !text-black m-0">Generate mock data</h3>
                         <p className="text-gray-600 mt-1 mb-0">
                           Click "Generate" and AI will create realistic JSON responses.
                         </p>
@@ -184,7 +184,7 @@ export default function DocsPage() {
                         3
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 m-0">Use your endpoint</h3>
+                        <h3 className="font-semibold !text-black m-0">Use your endpoint</h3>
                         <p className="text-gray-600 mt-1 mb-0">
                           Copy the generated endpoint URL and use it in your application.
                         </p>
@@ -192,13 +192,13 @@ export default function DocsPage() {
                     </div>
                   </div>
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Example Prompt</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">Example Prompt</h2>
                   <CodeBlock
                     code={`"List of 10 users with id, name, email, avatar, and role"`}
                     language="prompt"
                   />
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Using the Endpoint</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">Using the Endpoint</h2>
                   <CodeBlock
                     code={`fetch('https://yourapp.com/api/mock/users-abc123')
   .then(res => res.json())
@@ -210,12 +210,12 @@ export default function DocsPage() {
 
               {/* Generating Mocks */}
               {activeSection === "generating-mocks" && (
-                <div className="prose prose-indigo max-w-none">
+                <div className="prose prose-slate max-w-none">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="p-3 bg-yellow-100 rounded-xl">
                       <Zap className="w-6 h-6 text-yellow-600" />
                     </div>
-                    <h1 className="text-3xl font-bold text-gray-900 m-0">Generating Mocks</h1>
+                    <h1 className="text-3xl font-bold !text-black m-0">Generating Mocks</h1>
                   </div>
 
                   <p className="text-lg text-gray-600 leading-relaxed">
@@ -223,7 +223,7 @@ export default function DocsPage() {
                     based on your natural language descriptions.
                   </p>
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Writing Effective Prompts</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">Writing Effective Prompts</h2>
                   
                   <div className="space-y-4">
                     <div className="p-4 border-l-4 border-green-500 bg-green-50 rounded-r-xl">
@@ -241,7 +241,7 @@ export default function DocsPage() {
                     </div>
                   </div>
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Prompt Tips</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">Prompt Tips</h2>
                   <ul className="space-y-2 text-gray-600">
                     <li>Specify the data structure (array, object, nested)</li>
                     <li>Include field names and data types</li>
@@ -249,7 +249,7 @@ export default function DocsPage() {
                     <li>Add context for realistic values (e.g., "US phone numbers")</li>
                   </ul>
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Example Prompts</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">Example Prompts</h2>
                   <CodeBlock
                     code={`// E-commerce products
 "10 products with id, name, description, price, discountPercent, images array, category, rating"
@@ -266,25 +266,25 @@ export default function DocsPage() {
 
               {/* Endpoint Management */}
               {activeSection === "endpoint-management" && (
-                <div className="prose prose-indigo max-w-none">
+                <div className="prose prose-slate max-w-none">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="p-3 bg-blue-100 rounded-xl">
                       <Server className="w-6 h-6 text-blue-600" />
                     </div>
-                    <h1 className="text-3xl font-bold text-gray-900 m-0">Endpoint Management</h1>
+                    <h1 className="text-3xl font-bold !text-black m-0">Endpoint Management</h1>
                   </div>
 
                   <p className="text-lg text-gray-600 leading-relaxed">
                     Manage your generated mock endpoints, organize them by project, and share them with your team.
                   </p>
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Endpoint Features</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">Endpoint Features</h2>
                   
                   <div className="grid gap-4">
                     <div className="flex gap-4 p-4 bg-gray-50 rounded-xl">
                       <FileJson className="w-6 h-6 text-indigo-600 flex-shrink-0" />
                       <div>
-                        <h3 className="font-semibold text-gray-900 m-0">JSON Editor</h3>
+                        <h3 className="font-semibold !text-black m-0">JSON Editor</h3>
                         <p className="text-gray-600 mt-1 mb-0">
                           Edit the mock response data directly in the built-in JSON editor with syntax highlighting.
                         </p>
@@ -294,7 +294,7 @@ export default function DocsPage() {
                     <div className="flex gap-4 p-4 bg-gray-50 rounded-xl">
                       <Copy className="w-6 h-6 text-indigo-600 flex-shrink-0" />
                       <div>
-                        <h3 className="font-semibold text-gray-900 m-0">Copy URL</h3>
+                        <h3 className="font-semibold !text-black m-0">Copy URL</h3>
                         <p className="text-gray-600 mt-1 mb-0">
                           One-click copy of the endpoint URL for easy integration into your code.
                         </p>
@@ -304,7 +304,7 @@ export default function DocsPage() {
                     <div className="flex gap-4 p-4 bg-gray-50 rounded-xl">
                       <Terminal className="w-6 h-6 text-indigo-600 flex-shrink-0" />
                       <div>
-                        <h3 className="font-semibold text-gray-900 m-0">API Tester</h3>
+                        <h3 className="font-semibold !text-black m-0">API Tester</h3>
                         <p className="text-gray-600 mt-1 mb-0">
                           Test your endpoints with different HTTP methods directly from the dashboard.
                         </p>
@@ -312,7 +312,7 @@ export default function DocsPage() {
                     </div>
                   </div>
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">URL Structure</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">URL Structure</h2>
                   <CodeBlock
                     code={`# Base URL pattern
 /api/mock/{endpoint-slug}
@@ -327,12 +327,12 @@ export default function DocsPage() {
 
               {/* Chaos Mode */}
               {activeSection === "chaos-mode" && (
-                <div className="prose prose-indigo max-w-none">
+                <div className="prose prose-slate max-w-none">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="p-3 bg-orange-100 rounded-xl">
                       <Shuffle className="w-6 h-6 text-orange-600" />
                     </div>
-                    <h1 className="text-3xl font-bold text-gray-900 m-0">Chaos Mode</h1>
+                    <h1 className="text-3xl font-bold !text-black m-0">Chaos Mode</h1>
                   </div>
 
                   <p className="text-lg text-gray-600 leading-relaxed">
@@ -340,32 +340,32 @@ export default function DocsPage() {
                     error responses, and network issues to test your application's resilience.
                   </p>
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Features</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">Features</h2>
                   
                   <div className="space-y-4">
                     <div className="p-4 bg-gray-50 rounded-xl">
-                      <h3 className="font-semibold text-gray-900 m-0">⏱️ Response Delay</h3>
+                      <h3 className="font-semibold !text-black m-0">⏱️ Response Delay</h3>
                       <p className="text-gray-600 mt-1 mb-0">
                         Add artificial latency (0-5000ms) to simulate slow network conditions.
                       </p>
                     </div>
 
                     <div className="p-4 bg-gray-50 rounded-xl">
-                      <h3 className="font-semibold text-gray-900 m-0">❌ Error Rate</h3>
+                      <h3 className="font-semibold !text-black m-0">❌ Error Rate</h3>
                       <p className="text-gray-600 mt-1 mb-0">
                         Configure a percentage of requests to fail with error responses (500, 503, etc.).
                       </p>
                     </div>
 
                     <div className="p-4 bg-gray-50 rounded-xl">
-                      <h3 className="font-semibold text-gray-900 m-0">🔀 HTTP Methods</h3>
+                      <h3 className="font-semibold !text-black m-0">🔀 HTTP Methods</h3>
                       <p className="text-gray-600 mt-1 mb-0">
                         Enable or disable specific HTTP methods (GET, POST, PUT, PATCH, DELETE).
                       </p>
                     </div>
                   </div>
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Preset Configurations</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">Preset Configurations</h2>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-4 bg-green-50 border border-green-200 rounded-xl">
                       <h4 className="font-semibold text-green-800 m-0">🌈 Stable</h4>
@@ -389,12 +389,12 @@ export default function DocsPage() {
 
               {/* API Testing */}
               {activeSection === "api-testing" && (
-                <div className="prose prose-indigo max-w-none">
+                <div className="prose prose-slate max-w-none">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="p-3 bg-purple-100 rounded-xl">
                       <Play className="w-6 h-6 text-purple-600" />
                     </div>
-                    <h1 className="text-3xl font-bold text-gray-900 m-0">API Testing</h1>
+                    <h1 className="text-3xl font-bold !text-black m-0">API Testing</h1>
                   </div>
 
                   <p className="text-lg text-gray-600 leading-relaxed">
@@ -402,7 +402,7 @@ export default function DocsPage() {
                     directly from the MockSmith dashboard.
                   </p>
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Supported Methods</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">Supported Methods</h2>
                   
                   <div className="flex flex-wrap gap-2 not-prose">
                     <span className="px-3 py-1 bg-green-500 text-white font-mono text-sm rounded-lg font-bold">GET</span>
@@ -412,7 +412,7 @@ export default function DocsPage() {
                     <span className="px-3 py-1 bg-red-500 text-white font-mono text-sm rounded-lg font-bold">DELETE</span>
                   </div>
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Response Information</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">Response Information</h2>
                   <ul className="space-y-2 text-gray-600">
                     <li><strong>Status Code:</strong> HTTP status (200, 201, 400, 500, etc.)</li>
                     <li><strong>Response Time:</strong> Time taken to receive the response in milliseconds</li>
@@ -420,7 +420,7 @@ export default function DocsPage() {
                     <li><strong>Copy Response:</strong> One-click copy of the response data</li>
                   </ul>
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Example Request</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">Example Request</h2>
                   <CodeBlock
                     code={`// POST request with body
 fetch('/api/mock/users-abc123', {
@@ -440,15 +440,15 @@ fetch('/api/mock/users-abc123', {
 
               {/* API Reference */}
               {activeSection === "api-reference" && (
-                <div className="prose prose-indigo max-w-none">
+                <div className="prose prose-slate max-w-none">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="p-3 bg-green-100 rounded-xl">
                       <Code className="w-6 h-6 text-green-600" />
                     </div>
-                    <h1 className="text-3xl font-bold text-gray-900 m-0">API Reference</h1>
+                    <h1 className="text-3xl font-bold !text-black m-0">API Reference</h1>
                   </div>
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Generate Endpoint</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">Generate Endpoint</h2>
                   <CodeBlock
                     code={`POST /api/generate
 
@@ -471,7 +471,7 @@ Response:
                     language="http"
                   />
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Get Mock Data</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">Get Mock Data</h2>
                   <CodeBlock
                     code={`GET /api/mock/{slug}
 
@@ -485,7 +485,7 @@ Response:
                     language="http"
                   />
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Update Endpoint</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">Update Endpoint</h2>
                   <CodeBlock
                     code={`PATCH /api/endpoints/{id}
 
@@ -505,15 +505,15 @@ Request Body:
 
               {/* Configuration */}
               {activeSection === "configuration" && (
-                <div className="prose prose-indigo max-w-none">
+                <div className="prose prose-slate max-w-none">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="p-3 bg-gray-200 rounded-xl">
                       <Settings className="w-6 h-6 text-gray-600" />
                     </div>
-                    <h1 className="text-3xl font-bold text-gray-900 m-0">Configuration</h1>
+                    <h1 className="text-3xl font-bold !text-black m-0">Configuration</h1>
                   </div>
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Environment Variables</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">Environment Variables</h2>
                   <CodeBlock
                     code={`# .env.local
 
@@ -525,7 +525,7 @@ REQUIRE_SERVER_KEY=true`}
                     language="bash"
                   />
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">API Key Setup</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">API Key Setup</h2>
                   <p className="text-gray-600">
                     For enhanced AI-generated mock data, you can configure a Gemini API key. 
                     There are two ways to set this up:
@@ -549,7 +549,7 @@ REQUIRE_SERVER_KEY=true`}
                     </div>
                   </div>
 
-                  <h2 className="text-xl font-bold text-gray-900 mt-8 mb-4">Get a Gemini API Key</h2>
+                  <h2 className="text-xl font-bold !text-black mt-8 mb-4">Get a Gemini API Key</h2>
                   <p className="text-gray-600">
                     Visit the <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800">
                     Google AI Studio <ExternalLink className="w-4 h-4 inline" /></a> to create a free API key.

@@ -154,18 +154,18 @@ export function UseCases() {
   };
 
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-24 bg-gray-50 dark:bg-slate-800">
       <div className="container-main">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 rounded-full text-sm font-medium mb-4">
             Use Cases
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Built for Every{" "}
             <span className="gradient-text">Developer Workflow</span>
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 dark:text-gray-300">
             Whether you're building, testing, learning, or demoing - 
             MockMaster adapts to your needs.
           </p>
@@ -182,8 +182,8 @@ export function UseCases() {
                 className={cn(
                   "w-full p-6 rounded-xl text-left transition-all duration-300",
                   activeCase.id === useCase.id
-                    ? "bg-white shadow-lg border-2 border-indigo-500"
-                    : "bg-white/50 border-2 border-transparent hover:bg-white hover:shadow-md"
+                    ? "bg-white dark:bg-slate-900 shadow-lg border-2 border-indigo-500"
+                    : "bg-white/50 dark:bg-slate-900/50 border-2 border-transparent hover:bg-white dark:hover:bg-slate-900 hover:shadow-md"
                 )}
               >
                 <div className="flex items-start gap-4">
@@ -191,8 +191,8 @@ export function UseCases() {
                     className={cn(
                       "w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors",
                       activeCase.id === useCase.id
-                        ? "bg-indigo-100 text-indigo-600"
-                        : "bg-gray-100 text-gray-500"
+                        ? "bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400"
+                        : "bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-gray-400"
                     )}
                   >
                     <useCase.icon className="w-6 h-6" />
@@ -202,13 +202,13 @@ export function UseCases() {
                       className={cn(
                         "text-lg font-bold mb-2 transition-colors",
                         activeCase.id === useCase.id
-                          ? "text-indigo-600"
-                          : "text-gray-900"
+                          ? "text-indigo-600 dark:text-indigo-400"
+                          : "text-gray-900 dark:text-white"
                       )}
                     >
                       {useCase.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
                       {useCase.description}
                     </p>
                     {activeCase.id === useCase.id && (
@@ -216,7 +216,7 @@ export function UseCases() {
                         {useCase.benefits.map((benefit) => (
                           <li
                             key={benefit}
-                            className="flex items-center gap-2 text-sm text-gray-700"
+                            className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300"
                           >
                             <ChevronRight className="w-4 h-4 text-indigo-500" />
                             {benefit}

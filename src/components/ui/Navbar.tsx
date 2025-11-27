@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Zap, Menu, X, Github, BookOpen, ChevronDown, Key, Wrench } from "lucide-react";
+import { Zap, Menu, X, Github, BookOpen, ChevronDown, Key, Wrench, Sun, Moon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTheme } from "@/lib/theme-context";
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -21,6 +22,7 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isToolsOpen, setIsToolsOpen] = useState(false);
   const toolsRef = useRef<HTMLDivElement>(null);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +48,7 @@ export function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
-            ? "bg-white/80 backdrop-blur-nav shadow-sm border-b border-gray-200/50"
+            ? "bg-white/80 dark:bg-slate-900/90 backdrop-blur-nav shadow-sm border-b border-gray-200/50 dark:border-slate-700/50"
             : "bg-transparent"
         )}
       >
@@ -57,8 +59,8 @@ export function Navbar() {
               <div className="p-2 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl shadow-lg group-hover:shadow-indigo-500/25 transition-shadow">
                 <Zap className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-gray-900">
-                Mock<span className="text-indigo-600">Master</span>
+              <span className="text-xl font-bold text-gray-900 dark:text-white">
+                Mock<span className="text-indigo-600 dark:text-indigo-400">Master</span>
               </span>
             </Link>
 
@@ -68,7 +70,7 @@ export function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors"
+                  className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -78,7 +80,7 @@ export function Navbar() {
               <div ref={toolsRef} className="relative">
                 <button
                   onClick={() => setIsToolsOpen(!isToolsOpen)}
-                  className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors"
+                  className="flex items-center gap-1 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                 >
                   <Wrench className="w-4 h-4" />
                   Tools
@@ -86,7 +88,7 @@ export function Navbar() {
                 </button>
                 
                 {isToolsOpen && (
-                  <div className="absolute top-full right-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden animate-fade-in z-50">
+                  <div className="absolute top-full right-0 mt-2 w-64 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-gray-200 dark:border-slate-700 overflow-hidden animate-fade-in z-50">
                     {toolsLinks.map((tool) => {
                       const Icon = tool.icon;
                       return (
@@ -94,14 +96,14 @@ export function Navbar() {
                           key={tool.href}
                           href={tool.href}
                           onClick={() => setIsToolsOpen(false)}
-                          className="flex items-start gap-3 p-4 hover:bg-gray-50 transition-colors"
+                          className="flex items-start gap-3 p-4 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
                         >
-                          <div className="p-2 bg-indigo-100 rounded-lg">
-                            <Icon className="w-4 h-4 text-indigo-600" />
+                          <div className="p-2 bg-indigo-100 dark:bg-indigo-900/50 rounded-lg">
+                            <Icon className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
                           </div>
                           <div>
-                            <div className="font-medium text-gray-900">{tool.label}</div>
-                            <div className="text-xs text-gray-500">{tool.description}</div>
+                            <div className="font-medium text-gray-900 dark:text-white">{tool.label}</div>
+                            <div className="text-xs text-gray-500 dark:text-gray-400">{tool.description}</div>
                           </div>
                         </Link>
                       );
@@ -113,6 +115,17 @@ export function Navbar() {
 
             {/* Desktop Actions */}
             <div className="hidden md:flex items-center gap-4">
+              <button
+                onClick={toggleTheme}
+                className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700 rounded-lg transition-colors"
+                aria-label="Toggle theme"
+              >
+                {theme === "light" ? (
+                  <Moon className="w-5 h-5" />
+                ) : (
+                  <Sun className="w-5 h-5" />
+                )}
+              </button>
               <a
                 href="https://github.com"
                 target="_blank"
@@ -125,7 +138,7 @@ export function Navbar() {
                 href="#demo"
                 className="btn btn-primary text-sm"
               >
-                Try Free Demo
+                Try Now
               </Link>
             </div>
 
@@ -211,12 +224,28 @@ export function Navbar() {
           </div>
 
           <div className="mt-8 space-y-4">
+            <button
+              onClick={toggleTheme}
+              className="btn btn-secondary w-full justify-center"
+            >
+              {theme === "light" ? (
+                <>
+                  <Moon className="w-5 h-5" />
+                  Dark Mode
+                </>
+              ) : (
+                <>
+                  <Sun className="w-5 h-5" />
+                  Light Mode
+                </>
+              )}
+            </button>
             <Link
               href="#demo"
               onClick={() => setIsMobileMenuOpen(false)}
               className="btn btn-primary w-full justify-center"
             >
-              Try Free Demo
+              Try Now
             </Link>
             <a
               href="https://github.com"

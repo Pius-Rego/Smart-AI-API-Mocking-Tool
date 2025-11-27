@@ -13,8 +13,8 @@ export function Hero() {
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50" />
-      <div className="absolute inset-0 bg-grid opacity-40" />
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800" />
+      <div className="absolute inset-0 bg-grid opacity-40 dark:opacity-20" />
       
       {/* Floating Gradient Orbs */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" />
@@ -26,22 +26,22 @@ export function Hero() {
           {/* Left Column - Content */}
           <div className="text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 mb-8 animate-fade-in-up">
-              <Sparkles className="w-4 h-4 text-indigo-600" />
-              <span className="text-sm font-medium text-gray-700">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 rounded-full shadow-md border border-gray-200 dark:border-slate-700 mb-8 animate-fade-in-up">
+              <Sparkles className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                 AI-Powered Mock API Generation
               </span>
             </div>
 
             {/* Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6 animate-fade-in-up delay-100">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight mb-6 animate-fade-in-up delay-100">
               Mock REST APIs in{" "}
               <span className="gradient-text">Seconds</span>
               , Not Hours
             </h1>
 
             {/* Subheadline */}
-            <p className="text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-in-up delay-200">
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-in-up delay-200">
               Describe what you need in plain English. Get a live API endpoint with 
               realistic data instantly. No backend required.
             </p>
@@ -52,7 +52,7 @@ export function Hero() {
                 href="#demo"
                 className="btn btn-primary text-base px-8 py-4"
               >
-                Try Free Demo
+                Try Now
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
@@ -68,12 +68,12 @@ export function Hero() {
             <div className="flex flex-wrap justify-center lg:justify-start gap-8 animate-fade-in-up delay-400">
               {stats.map((stat) => (
                 <div key={stat.label} className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-indigo-100 flex items-center justify-center">
-                    <stat.icon className="w-5 h-5 text-indigo-600" />
+                  <div className="w-10 h-10 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center">
+                    <stat.icon className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
-                    <p className="text-sm text-gray-500">{stat.label}</p>
+                    <p className="text-2xl font-bold text-gray-900 dark:text-white">{stat.value}</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">{stat.label}</p>
                   </div>
                 </div>
               ))}
@@ -84,26 +84,26 @@ export function Hero() {
           <div className="relative animate-fade-in-up delay-300">
             <div className="relative">
               {/* Main Demo Card */}
-              <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-slate-700 overflow-hidden">
                 {/* Browser Chrome */}
-                <div className="flex items-center gap-2 px-4 py-3 bg-gray-100 border-b border-gray-200">
+                <div className="flex items-center gap-2 px-4 py-3 bg-gray-100 dark:bg-slate-900 border-b border-gray-200 dark:border-slate-700">
                   <div className="flex gap-1.5">
                     <div className="w-3 h-3 rounded-full bg-red-400" />
                     <div className="w-3 h-3 rounded-full bg-yellow-400" />
                     <div className="w-3 h-3 rounded-full bg-green-400" />
                   </div>
                   <div className="flex-1 mx-4">
-                    <div className="bg-white rounded-md px-3 py-1 text-xs text-gray-500 font-mono">
+                    <div className="bg-white dark:bg-slate-800 rounded-md px-3 py-1 text-xs text-gray-500 dark:text-gray-400 font-mono">
                       mockmaster.dev/api/mock/users-abc123
                     </div>
                   </div>
                 </div>
 
                 {/* Input Section */}
-                <div className="p-6 bg-gradient-to-b from-indigo-50 to-white">
-                  <div className="flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-indigo-200 shadow-sm">
+                <div className="p-6 bg-gradient-to-b from-indigo-50 to-white dark:from-slate-800 dark:to-slate-800">
+                  <div className="flex items-center gap-3 p-4 bg-white dark:bg-slate-900 rounded-xl border-2 border-indigo-200 dark:border-indigo-800 shadow-sm">
                     <Sparkles className="w-5 h-5 text-indigo-500" />
-                    <span className="text-gray-700 font-medium">
+                    <span className="text-gray-700 dark:text-gray-300 font-medium">
                       "Give me 5 users with name, email, and avatar"
                     </span>
                   </div>
