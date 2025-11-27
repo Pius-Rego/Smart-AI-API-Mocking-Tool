@@ -2,6 +2,7 @@
   "/_not-found/page": "app/_not-found/page.js",
   "/api/test-api-key/route": "app/api/test-api-key/route.js",
   "/docs/page": "app/docs/page.js",
+  "/examples/page": "app/examples/page.js",
   "/page": "app/page.js",
   "/tools/api-key-tester/page": "app/tools/api-key-tester/page.js"
 }

@@ -10,7 +10,6 @@ import { Footer } from "@/components/ui/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Features } from "@/components/sections/Features";
 import { UseCases } from "@/components/sections/UseCases";
-import { Pricing } from "@/components/sections/Pricing";
 import { FAQ } from "@/components/sections/FAQ";
 import { useAppStore } from "@/lib/store";
 
@@ -72,9 +71,6 @@ export default function Home() {
 
       {/* Use Cases Section */}
       <UseCases />
-
-      {/* Pricing Section */}
-      <Pricing />
 
       {/* FAQ Section */}
       <FAQ />
