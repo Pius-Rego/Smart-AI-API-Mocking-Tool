@@ -16,7 +16,7 @@ const EXAMPLE_PROMPTS = [
 export function PromptInput() {
   const [prompt, setPrompt] = useState("");
   const [showExamples, setShowExamples] = useState(false);
-  const { isGenerating, setIsGenerating, addEndpoint, setError, error } = useAppStore();
+  const { isGenerating, setIsGenerating, addEndpoint, setError, error, apiKey } = useAppStore();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   // Auto-resize textarea
@@ -37,7 +37,7 @@ export function PromptInput() {
       const response = await fetch("/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: prompt.trim() }),
+        body: JSON.stringify({ prompt: prompt.trim(), apiKey }),
       });
 
       const data = await response.json();

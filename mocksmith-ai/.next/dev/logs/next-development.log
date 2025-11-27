@@ -1,0 +1,3 @@
+[00:08:13.857] Server  ERROR   Error: ENOENT: no such file or directory, scandir '/Users/pius_rego/Smart-AI-API-Mocking-Tool/mocksmith-ai/src/app'
+[00:08:13.859] Server  ERROR    ⨯ "unhandledRejection:" Error: ENOENT: no such file or directory, scandir '/Users/pius_rego/Smart-AI-API-Mocking-Tool/mocksmith-ai/src/app'
+[00:08:13.860] Server  ERROR    ⨯ "unhandledRejection: " Error: ENOENT: no such file or directory, scandir '/Users/pius_rego/Smart-AI-API-Mocking-Tool/mocksmith-ai/src/app'

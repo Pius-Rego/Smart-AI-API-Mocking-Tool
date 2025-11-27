@@ -1,0 +1,6 @@
+{
+  "/api/endpoints/[id]/route": "app/api/endpoints/[id]/route.js",
+  "/api/generate/route": "app/api/generate/route.js",
+  "/api/mock/[slug]/route": "app/api/mock/[slug]/route.js",
+  "/page": "app/page.js"
+}
